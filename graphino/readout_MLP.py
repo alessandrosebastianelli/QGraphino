@@ -50,7 +50,5 @@ class ONI_MLP(nn.Module):
         x = np.pi * torch.tanh(x)
         x = self.qc(x[0])
         x = F.elu(x)
-
         y = self.out_layer(x.float())
-
         return y

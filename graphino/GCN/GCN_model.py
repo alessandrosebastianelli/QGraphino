@@ -7,7 +7,7 @@ from utilities.utils import get_activation_function
 
 
 class GCN(nn.Module):
-    def __init__(self, net_params, static_feat=None, adj=None, device='cuda', outsize=1, verbose=True):
+    def __init__(self, net_params, static_feat=None, adj=None, device='cpu', outsize=1, verbose=True):
         super().__init__()
         self.L = net_params['L']
         assert self.L > 1

@@ -13,6 +13,11 @@ from utilities.model_logging import update_tqdm, save_model
 from utilities.optimization import get_optimizer, get_loss
 
 params, net_params = get_argparser()
+
+params['batch_size'] = 1
+net_params['batch_norm'] = False
+net_params['mlp_batch_norm'] = False
+
 set_seed(params['seed'])
 (adj, static_feats, _), (trainloader, valloader, testloader) = get_dataloaders(params, net_params)
 ckpt_dir, log_dir = get_dirs(params, net_params)
@@ -22,7 +27,7 @@ optimizer = get_optimizer(params['optimizer'], model, lr=params['lr'], weight_de
 criterion = get_loss(params['loss'])
 
 # Train model
-device = 'cuda'
+device = 'cpu'
 t_total = time.time()
 model = model.to(device)
 val_stats = None

@@ -13,7 +13,7 @@
         "seed": 41,
         "shuffle": true,
         "epochs": 50,
-        "batch_size": 64,
+        "batch_size": 1,
         "lr": 0.005,
         "nesterov": true,
         "weight_decay": 1e-4,
