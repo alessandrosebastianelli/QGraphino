@@ -2,7 +2,7 @@ from qiskit.circuit import Parameter
 from qiskit import execute
 import qiskit
 
-from config import *
+from .config import *
 
 class QiskitCircuit():
     '''

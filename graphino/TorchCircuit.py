@@ -1,8 +1,8 @@
-from QiskitCircuit import QiskitCircuit
+from .QiskitCircuit import QiskitCircuit
 from torch.autograd import Function
 import torch
 
-from config import *
+from .config import *
 
 class TorchCircuit(Function):
     '''
